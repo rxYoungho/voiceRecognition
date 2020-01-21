@@ -15,14 +15,14 @@ with sr.Microphone() as source:
     except:
         print("Sorry could not recognize what you said")
     
-with sr.Microphone() as source:
-    print("Speak Anything :")
-    audio = r1.listen(source)
-    text = r1.recognize_google(audio)
-    print("You said : {}".format(text))
-    if 'webtoon' or 'web toon' or 'Webtoon' in text:
-        url = "https://comic.naver.com/webtoon/list.nhn?titleId=670143&weekday=wed"
-        webbrowser.open(url)
+# with sr.Microphone() as source:
+#     print("Speak Anything :")
+#     audio = r1.listen(source)
+#     text = r1.recognize_google(audio)
+#     print("You said : {}".format(text))
+#     if 'webtoon' or 'web toon' or 'Webtoon' in text:
+#         url = "https://comic.naver.com/webtoon/list.nhn?titleId=670143&weekday=wed"
+#         webbrowser.open(url)
     
     
     # if 'Naver' or 'naver' in text:
