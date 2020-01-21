@@ -1,6 +1,5 @@
-import speech_recognition as sr
 import webbrowser
-
+import speech_recognition as sr
 
 r = sr.Recognizer()
 r1 = sr.Recognizer()
