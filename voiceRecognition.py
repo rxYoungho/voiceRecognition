@@ -1,19 +1,28 @@
 import speech_recognition as sr
 import webbrowser
+repeat = 1
 
-r = sr.Recognizer()
-
-with sr.Microphone() as source:
-    print("Speak Anything :")
-    audio = r.listen(source)
-    text = r.recognize_google(audio)
+while repeat != 0: 
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Speak Anything :")
+        audio = r.listen(source)
+        text = r.recognize_google(audio)
     
-    print("You said : {}".format(text))
-    if 'Google' or 'google' in text:
-        url = "http://www.google.com"
-        webbrowser.open(url) #This opens without any condition!!!! error!!
-    else:
-        print("Sorry could not recognize what you said")
+        print("You said : {}".format(text))
+            
+        if text == "Google": 
+            url = "http://www.google.com"
+            webbrowser.open(url) #This opens without any condition!!!! error!!
+            text = ""
+            repeat = 0
+        
+        if text == "webtoon":
+            url = ""
+
+        else:
+            repeat = 1
+            text = ""
     
 # with sr.Microphone() as source:
 #     print("Speak Anything :")
