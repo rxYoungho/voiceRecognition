@@ -13,7 +13,7 @@ First: "PyAudio not installed" -> this errors occurs when you are using python 3
 
 PyAudio only works until Python 3.6!
 
-Second: You might not be able to download pip install PyAudio in Mac OS sometimes, and I do not know exactly why. 
+Second: You might not be able to use "pip install PyAudio" in Mac OS sometimes, and I do not know exactly why. 
 However, you can fix the installation problem by downloading the portaudio using homebrew.
 
 The command is :
