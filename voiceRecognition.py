@@ -1,5 +1,6 @@
 import speech_recognition as sr
 import webbrowser
+
 repeat = 1
 
 while repeat != 0: 
@@ -18,7 +19,11 @@ while repeat != 0:
             repeat = 0
         
         if text == "webtoon":
-            url = ""
+            url = "https://comic.naver.com/webtoon/list.nhn?titleId=670143&weekday=wed"
+            webbrowser.open(url) #This opens without any condition!!!! error!!
+            text = ""
+            repeat = 0
+
 
         else:
             repeat = 1
