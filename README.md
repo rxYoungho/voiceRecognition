@@ -10,6 +10,7 @@ This is a voice recognition program to open web browsers with a simple speech li
 I have struggled some error for three hours. 
 
 First: "PyAudio not installed" -> this errors occurs when you are using python 3.7 or higher. 
+
 PyAudio only works until Python 3.6!
 
 Second: You might not be able to download pip install PyAudio in Mac OS sometimes, and I do not know exactly why. 
