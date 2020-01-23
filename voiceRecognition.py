@@ -4,56 +4,69 @@ import speech_recognition as sr
 import webbrowser
 
 def voiceCon(): #will call this when the button is clicked
-        r = sr.Recognizer()
-        with sr.Microphone() as source:  #this code uses the mic.
-            print("Speak Anything :")
-            audio = r.listen(source) #this code saves the word that was given from the user (speech) to "text"
-            text = r.recognize_google(audio)
+   repeat = 1
+   r = sr.Recognizer()
+while repeat == 1:
+    with sr.Microphone() as source:  #this code uses the mic.
+        print("Speak Anything :")
+        audio = r.listen(source) #this code saves the word that was given from the user (speech) to "text"
+        text = r.recognize_google(audio)
+    
+        tkinter.messagebox.showinfo('Shortcut words','Naver, Google, Webtoon, Youtube, or Github : tell me one of them')
+
+        if text == "Google" or text == "google": 
+            url = "http://www.google.com"
+            webbrowser.open(url) 
+            repeat = 0
+            #text = "" #must be initialized, since the text saves the previous speech to text
+            
         
-            print("You said : {}".format(text))
+        if text == "webtoon" or text == "Webtoon":
+            url = "https://comic.naver.com/webtoon/list.nhn?titleId=670143&weekday=wed"
+            webbrowser.open(url) 
+            repeat = 0
+            #text = "" 
+        
 
-            if text == "Google" or text == "google": 
-                url = "http://www.google.com"
-                webbrowser.open(url) 
-                #text = "" #must be initialized, since the text saves the previous speech to text
-               
-            
-            if text == "webtoon" or text == "Webtoon":
-                url = "https://comic.naver.com/webtoon/list.nhn?titleId=670143&weekday=wed"
-                webbrowser.open(url) 
-                #text = "" 
-            
+        if text == "Naver" or text == "naver":
+            url = "http://www.naver.com"
+            webbrowser.open(url)
+            repeat = 0
+            #text = "" 
+        
+        if text == 'youtube' or text == 'Youtube':
+            url = "http://www.youtube.com"
+            webbrowser.open(url)
+            repeat = 0
+            #text = ""
 
-            if text == "Naver" or text == "naver":
-                url = "http://www.naver.com"
-                webbrowser.open(url)
-                #text = "" 
-            
-            if text == 'youtube' or text == 'Youtube':
-                url = "http://www.youtube.com"
-                webbrowser.open(url)
-                #text = ""
+        if text =='github' or text =='Github':
+            url = "https://github.com/RelaxDanny?tab=repositories"
+            webbrowser.open(url)
+            repeat = 0
+            #text = "" 
 
-            if text =='github' or text =='Github':
-                url = "https://github.com/RelaxDanny?tab=repositories"
-                webbrowser.open(url)
-                #text = "" 
-
-            else:
-                repeat = 1 #if nothing is asked, exit.
-                #text = ""
-
+        else:
+            repeat = 1
+            #if nothing is asked or weird things are asked, exit.
+            #text = ""
+        
 def explain():
     tkinter.messagebox.showinfo('Shortcut words','Naver, Google, Webtoon, Youtube, or Github')
     answer = tkinter.messagebox.askquestion('!!','Do you Understand?')
     if answer == 'yes':
         tkinter.messagebox.showinfo('!', 'Thanks')
 
+def googleTest():
+    url = "http://www.google.com"
+    webbrowser.open(url) 
+
+
 def main():
     root = Tk()
 
-    canvas = Canvas(root, width = 200, height = 100)
-    canvas.pack()
+    # canvas = Canvas(root, width = 200, height = 100)
+    # canvas.pack()
 
 # - - - - - - Inside the line - - - - - - - #
   #  blackLine = canvas.create_line(0, 2, 200, 2)
@@ -66,7 +79,7 @@ def main():
 # - - - - - - Inside the line - - - - - - - #
 
 
-# - - - - - - Menu - - - - - - #
+# - - - - - - First Menu - - - - - - #
     menu = Menu(root)
     root.config(menu=menu) #this code makes a menu label 
 
@@ -75,6 +88,12 @@ def main():
     subMenu.add_command(label="what kind of shortcuts...", command=explain)
     subMenu.add_separator() #this creates a line between the submenu
     subMenu.add_command(label="Exit", command=exit)
+
+# - - - - - - - Second Menu - - - - - - - - #
+    testMenu = Menu(menu, tearoff = 0)
+    menu.add_cascade(label ="Test", menu = testMenu)
+    testMenu.add_command(label ="test Google", command = googleTest)
+
 
 # - - - - - - - - - - - - - -#
     voiceButton = Button(root, text = "rxDanny", command = voiceCon)
