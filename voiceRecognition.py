@@ -4,9 +4,9 @@ import speech_recognition as sr
 import webbrowser
 
 def voiceCon(): #will call this when the button is clicked
-   repeat = 1
-   r = sr.Recognizer()
-while repeat == 1:
+    repeat = 1
+    r = sr.Recognizer()
+
     with sr.Microphone() as source:  #this code uses the mic.
         print("Speak Anything :")
         audio = r.listen(source) #this code saves the word that was given from the user (speech) to "text"
