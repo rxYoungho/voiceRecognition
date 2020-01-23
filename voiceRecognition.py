@@ -6,51 +6,45 @@ import webbrowser
 def voiceCon(): #will call this when the button is clicked
     repeat = 1
     r = sr.Recognizer()
-
     with sr.Microphone() as source:  #this code uses the mic.
         print("Speak Anything :")
         audio = r.listen(source) #this code saves the word that was given from the user (speech) to "text"
         text = r.recognize_google(audio)
-    
-        tkinter.messagebox.showinfo('Shortcut words','Naver, Google, Webtoon, Youtube, or Github : tell me one of them')
+
+        print(text)
 
         if text == "Google" or text == "google": 
             url = "http://www.google.com"
             webbrowser.open(url) 
-            repeat = 0
+    
             #text = "" #must be initialized, since the text saves the previous speech to text
             
         
         if text == "webtoon" or text == "Webtoon":
             url = "https://comic.naver.com/webtoon/list.nhn?titleId=670143&weekday=wed"
             webbrowser.open(url) 
-            repeat = 0
             #text = "" 
         
 
         if text == "Naver" or text == "naver":
             url = "http://www.naver.com"
             webbrowser.open(url)
-            repeat = 0
             #text = "" 
         
-        if text == 'youtube' or text == 'Youtube':
+        if text == 'youtube' or text == 'YouTube':
             url = "http://www.youtube.com"
             webbrowser.open(url)
-            repeat = 0
             #text = ""
 
         if text =='github' or text =='Github':
             url = "https://github.com/RelaxDanny?tab=repositories"
             webbrowser.open(url)
-            repeat = 0
             #text = "" 
-
         else:
-            repeat = 1
+            text = ""
             #if nothing is asked or weird things are asked, exit.
             #text = ""
-        
+
 def explain():
     tkinter.messagebox.showinfo('Shortcut words','Naver, Google, Webtoon, Youtube, or Github')
     answer = tkinter.messagebox.askquestion('!!','Do you Understand?')
