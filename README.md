@@ -20,6 +20,7 @@ However, you can fix the installation problem by downloading the portaudio using
 
 The command is :
 $ brew install portaudio
+$ pip install PyAudio
 
 I recommend you to download Homebrew before you clone this source codes.
 
