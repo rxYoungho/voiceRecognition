@@ -19,6 +19,7 @@ Second: You might not be able to use "pip install PyAudio" in Mac OS sometimes, 
 However, you can fix the installation problem by downloading the portaudio using homebrew.
 
 The command is :
+
 $ brew install portaudio
 
 $ pip install PyAudio
