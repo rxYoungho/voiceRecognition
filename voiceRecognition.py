@@ -18,14 +18,12 @@ def voiceCon(): #will call this when the button is clicked
             webbrowser.open(url) 
     
             #text = "" #must be initialized, since the text saves the previous speech to text
-            
-        
+    
         if text == "webtoon" or text == "Webtoon":
             url = "https://comic.naver.com/webtoon/list.nhn?titleId=670143&weekday=wed"
             webbrowser.open(url) 
             #text = "" 
         
-
         if text == "Naver" or text == "naver":
             url = "http://www.naver.com"
             webbrowser.open(url)
@@ -40,6 +38,9 @@ def voiceCon(): #will call this when the button is clicked
             url = "https://github.com/RelaxDanny?tab=repositories"
             webbrowser.open(url)
             #text = "" 
+
+
+
         else:
             text = ""
             #if nothing is asked or weird things are asked, exit.
@@ -90,9 +91,9 @@ def main():
 
 
 # - - - - - - - - - - - - - -#
-    voiceButton = Button(root, text = "rxDanny", command = voiceCon)
+    voiceButton = Button(root, text = "rxDanny", bg= 'gray', fg='black',command = voiceCon)
     voiceButton.pack(side=LEFT)
-    quitButton = Button(root, text = "Exit", command = quit)
+    quitButton = Button(root, text = "Exit", bg= 'gray', fg='black', command = quit)
     quitButton.pack(side=RIGHT)
 
 
