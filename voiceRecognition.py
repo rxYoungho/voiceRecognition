@@ -65,7 +65,7 @@ def explain():
     tkinter.messagebox.showinfo('Shortcut words','Naver, Google, Webtoon, Youtube, or Github')
     answer = tkinter.messagebox.askquestion('!!','Do you Understand?')
     if answer == 'yes':
-        tkinter.messagebox.showinfo('!', 'Thanks')
+        tkinter.messagebox.showinfo('!', 'Thanks') # just for practice 
 
 def googleTest():
     url = "http://www.google.com"
